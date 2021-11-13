@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://habr.com/ru/post/273897/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>Git и Github. Простые рецепты / Хабр</title>
+  <style>
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Fira Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/firasans/v11/va9B4kDNxMZdWfMOD5VnZKveSxf6TF0.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+      font-family: 'Fira Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/firasans/v11/va9B4kDNxMZdWfMOD5VnZKveQhf6TF0.woff2) format('woff2');
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'Fira Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/firasans/v11/va9B4kDNxMZdWfMOD5VnZKveSBf6TF0.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'Fira Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/firasans/v11/va9B4kDNxMZdWfMOD5VnZKveRhf6.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+  <link rel="preload" href="./Git и Github. Простые рецепты _ Хабр_files/chunk-vendors.961b6771.css" as="style"><link rel="preload" href="./Git и Github. Простые рецепты _ Хабр_files/chunk-vendors.881c3e9d.js.загрузка" as="script"><link rel="preload" href="./Git и Github. Простые рецепты _ Хабр_files/app.204e3e20.css" as="style"><link rel="preload" href="./Git и Github. Простые рецепты _ Хабр_files/app.fdbba7e2.js.загрузка" as="script">
+  <link rel="stylesheet" href="./Git и Github. Простые рецепты _ Хабр_files/chunk-vendors.961b6771.css"><link rel="stylesheet" href="./Git и Github. Простые рецепты _ Хабр_files/app.204e3e20.css">
+  <script async="" src="./Git и Github. Простые рецепты _ Хабр_files/tag.js.загрузка"></script><script async="" src="./Git и Github. Простые рецепты _ Хабр_files/analytics.js.загрузка"></script><script>window.i18nFetch = new Promise((res, rej) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', '/js/i18n/ru-compiled.420ca2508375a39d13e70b6747230f78.json');
+          xhr.responseType = 'json';
+          xhr.onload = function(e) {
+            if (this.status === 200) {
+              res({ru: xhr.response});
+            } else {
+              rej(e);
+            }
+          };
+          xhr.send();
+        });</script>
+  
+  <script data-vue-meta="ssr" src="./Git и Github. Простые рецепты _ Хабр_files/ads.js.загрузка" onload="window[&#39;zhY4i4nJ9K&#39;] = true" data-vmid="checkad"></script><script data-vue-meta="ssr" type="application/ld+json" data-vmid="ldjson-schema">{"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/habr.com\/ru\/post\/273897\/"},"headline":"Git и Github. Простые рецепты","datePublished":"2015-12-23T19:33:41+03:00","dateModified":"2015-12-23T19:33:41+03:00","author":{"@type":"Person","name":"sunduchkov"},"publisher":{"@type":"Organization","name":"Habr","logo":{"@type":"ImageObject","url":"https:\/\/habrastorage.org\/webt\/a_\/lk\/9m\/a_lk9mjkccjox-zccjrpfolmkmq.png"}},"description":"При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В с...","url":"https:\/\/habr.com\/ru\/post\/273897\/#post-content-body","about":["h_git","h_github","f_develop"],"image":["https:\/\/habr.com\/share\/publication\/273897\/4d60d76737744776a482bb0092083f75\/"]}</script>
+  <script src="./Git и Github. Простые рецепты _ Хабр_files/gpt.js.загрузка" async=""></script>
+  <style>.grecaptcha-badge{visibility: hidden;}</style>
+  <meta name="habr-version" content="2.50.0">
+  
+  <meta data-vue-meta="ssr" property="fb:app_id" content="444736788986613"><meta data-vue-meta="ssr" property="fb:pages" content="472597926099084"><meta data-vue-meta="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-meta="ssr" name="twitter:site" content="@habr_com"><meta data-vue-meta="ssr" property="og:site_name" content="Хабр" data-vmid="og:site_name"><meta data-vue-meta="ssr" property="og:title" content="Git и Github. Простые рецепты" data-vmid="og:title"><meta data-vue-meta="ssr" name="twitter:title" content="Git и Github. Простые рецепты" data-vmid="twitter:title"><meta data-vue-meta="ssr" name="aiturec:title" content="Git и Github. Простые рецепты" data-vmid="aiturec:title"><meta data-vue-meta="ssr" name="description" content="При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это..." data-vmid="description"><meta data-vue-meta="ssr" itemprop="description" content="При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это..." data-vmid="description:itemprop"><meta data-vue-meta="ssr" property="og:description" content="При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это..." data-vmid="og:description"><meta data-vue-meta="ssr" name="twitter:description" content="При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это..." data-vmid="twitter:description"><meta data-vue-meta="ssr" property="aiturec:description" content="При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это..." data-vmid="aiturec:description"><meta data-vue-meta="ssr" itemprop="image" content="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="image:itemprop"><meta data-vue-meta="ssr" property="og:image" content="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="og:image"><meta data-vue-meta="ssr" property="og:image:width" content="1200" data-vmid="og:image:width"><meta data-vue-meta="ssr" property="og:image:height" content="630" data-vmid="og:image:height"><meta data-vue-meta="ssr" property="aiturec:image" content="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="aiturec:image"><meta data-vue-meta="ssr" name="twitter:image" content="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="twitter:image"><meta data-vue-meta="ssr" property="vk:image" content="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="vk:image"><meta data-vue-meta="ssr" property="aiturec:item_id" content="273897" data-vmid="aiturec:item_id"><meta data-vue-meta="ssr" property="aiturec:datetime" content="2015-12-23T16:33:41.000Z" data-vmid="aiturec:datetime"><meta data-vue-meta="ssr" property="og:type" content="article" data-vmid="og:type"><meta data-vue-meta="ssr" property="og:locale" content="ru_RU" data-vmid="og:locale"><meta data-vue-meta="ssr" name="keywords" content="git, github">
+  <link data-vue-meta="ssr" href="https://habr.com/ru/post/273897/" rel="og:url" data-vmid="og:url"><link data-vue-meta="ssr" href="https://habr.com/ru/rss/post/273897/?fl=ru" type="application/rss+xml" title="" rel="alternate" name="rss"><link data-vue-meta="ssr" href="https://habr.com/ru/post/273897/" rel="canonical" data-vmid="canonical"><link data-vue-meta="ssr" data-vmid="hreflang"><link data-vue-meta="ssr" image_src="image" href="https://habr.com/share/publication/273897/4d60d76737744776a482bb0092083f75/" data-vmid="image:href">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#303b44">
+  <meta name="msapplication-TileColor" content="#629FBC">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/png" sizes="16x16" href="https://assets.habr.com/habr-web/img/favicons/favicon-16.png">
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="https://assets.habr.com/habr-web/img/favicons/favicon-32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-76.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-120.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-152.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-180.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-256.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_1136x640.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2436x1125.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_1792x828.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_828x1792.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_1334x750.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1242x2668.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2208x1242.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1125x2436.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1242x2208.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2732x2048.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2688x1242.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2224x1668.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_750x1334.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_2048x2732.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2388x1668.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1668x2224.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_640x1136.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1668x2388.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://assets.habr.com/habr-web/img/splashes/splash_2048x1536.png">
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://assets.habr.com/habr-web/img/splashes/splash_1536x2048.png">
+  <link rel="mask-icon" color="#77a2b6" href="https://assets.habr.com/habr-web/img/favicons/apple-touch-icon-120.svg">
+  <link crossorigin="use-credentials" href="https://habr.com/manifest.webmanifest" rel="manifest">
+<script charset="utf-8" src="./Git и Github. Простые рецепты _ Хабр_files/chunk-2d21ab85.421fbae8.js.загрузка"></script><script charset="utf-8" src="./Git и Github. Простые рецепты _ Хабр_files/hljs.4ca94695.js.загрузка"></script><script charset="utf-8" src="./Git и Github. Простые рецепты _ Хабр_files/chunk-2d222042.bdf40a76.js.загрузка"></script><script data-vue-meta="ssr" onload="window[&#39;e0044d29c024&#39;] = true" src="./Git и Github. Простые рецепты _ Хабр_files/saved_resource" data-vmid="checklogin"></script></head>
+<body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+
+
+<div id="app" data-async-called="true"><div class="tm-layout__wrapper"><!----> <div></div> <!----> <header class="tm-header"><div class="tm-page-width"><div class="tm-header__container"><!----> <span class="tm-header__logo-wrap"><a href="https://habr.com/ru/" class="tm-header__logo tm-header__logo_ru"><svg height="16" width="16" class="tm-svg-img tm-header__icon"><title>Хабр</title> <use xlink:href="/img/habr-logo-ru.svg#logo"></use></svg></a> <span class="tm-header__beta-sign" style="display:none;">β</span></span> <div class="tm-dropdown tm-header__projects"><div class="tm-dropdown__head"><button class="tm-header__dropdown-toggle"><svg height="16" width="16" class="tm-svg-img tm-header__icon tm-header__icon_dropdown"><title>Открыть список</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#arrow-down"></use></svg></button></div> <!----></div> <a href="https://habr.com/ru/sandbox/start/" class="tm-header__become-author-btn">
+            Как стать автором
+          </a> <!----> <a href="https://effect.habr.com/s/-7N4Btylcf2mRiL38GrWvw.FBiVKdYs2D37a_XUSXqm86JyYIRPcDj5hDkzE1LhrPfC_SJyCzjuydEPEg2VR_saoeaV7OxP2vq65VC5erKTjNLG67fY6DPqgGkw8IZdPmQ" target="_blank" class="tm-top-link" style="color: rgb(255, 153, 247);">
+  Generation 6: как 802.11ах преображает целые города
+</a> <!----></div></div></header> <div class="tm-layout"><div class="tm-page-progress-bar"></div> <div data-menu-sticky="true" class="tm-base-layout__header tm-base-layout__header_is-sticky"><div class="tm-page-width"><div class="tm-base-layout__header-wrapper"><div class="tm-main-menu"><div class="tm-main-menu__section"><nav class="tm-main-menu__section-content"><!----> <a href="https://habr.com/ru/top" class="tm-main-menu__item">
+        Все потоки
+      </a> <a href="https://habr.com/ru/flows/develop/" class="tm-main-menu__item">
+          Разработка
+        </a><a href="https://habr.com/ru/flows/admin/" class="tm-main-menu__item">
+          Администрирование
+        </a><a href="https://habr.com/ru/flows/design/" class="tm-main-menu__item">
+          Дизайн
+        </a><a href="https://habr.com/ru/flows/management/" class="tm-main-menu__item">
+          Менеджмент
+        </a><a href="https://habr.com/ru/flows/marketing/" class="tm-main-menu__item">
+          Маркетинг
+        </a><a href="https://habr.com/ru/flows/popsci/" class="tm-main-menu__item">
+          Научпоп
+        </a></nav></div></div> <div class="tm-header-user-menu tm-base-layout__user-menu"><a href="https://habr.com/ru/search/" class="tm-header-user-menu__item tm-header-user-menu__search"><svg height="24" width="24" class="tm-svg-img tm-header-user-menu__icon tm-header-user-menu__icon_search tm-header-user-menu__icon_dark"><title>Поиск</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#search"></use></svg></a> <!----> <!----> <!----> <div class="tm-header-user-menu__item tm-header-user-menu__user_desktop"><div class="tm-dropdown"><div class="tm-dropdown__head"><svg height="24" width="24" data-test-id="menu-toggle-guest" class="tm-svg-img tm-header-user-menu__icon"><title>Профиль</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#header-user"></use></svg> <!----></div> <!----></div> <!----></div> <!----></div></div></div></div> <button class="tm-scroll-top"><span title="Наверх" class="tm-svg-icon__wrapper tm-scroll-top__arrow"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Наверх</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#small-arrow"></use></svg></span></button> <div class="tm-page-width"></div> <main class="tm-layout__container"><div hl="ru" data-async-called="true" class="tm-page"><div class="tm-page-width"><!----> <div class="tm-page__wrapper"><div class="tm-page__main tm-page__main_has-sidebar"><div class="pull-down"><div class="pull-down__header" style="height:0px;"><div class="pull-down__content" style="bottom:10px;"><svg height="24" width="24" class="tm-svg-img pull-down__arrow"><title>Обновить</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#pull-arrow"></use></svg></div></div> <div class="tm-article-presenter"> <div class="tm-article-presenter__body"><div class="tm-misprint-area"><div class="tm-misprint-area__wrapper"><article class="tm-article-presenter__content tm-article-presenter__content_narrow"><div class="tm-article-presenter__header"> <div class="tm-article-snippet tm-article-presenter__snippet"><div class="tm-article-snippet__meta-container"><div class="tm-article-snippet__meta"><span class="tm-user-info tm-article-snippet__author"><a href="https://habr.com/ru/users/sunduchkov/" title="sunduchkov" class="tm-user-info__userpic"><div class="tm-entity-image"><img alt="" height="24" loading="lazy" src="./Git и Github. Простые рецепты _ Хабр_files/e03ab3a71f0c72bc5503bcb078d8bc2c.jpg" width="24" class="tm-entity-image__pic"></div></a> <span class="tm-user-info__user"><a href="https://habr.com/ru/users/sunduchkov/" class="tm-user-info__username">
+      sunduchkov
+    </a> </span></span> <span class="tm-article-snippet__datetime-published"><time datetime="2015-12-23T16:33:41.000Z" title="2015-12-23, 21:33">23  декабря  2015 в 21:33</time></span></div> <!----></div> <h1 lang="ru" class="tm-article-snippet__title tm-article-snippet__title_h1"><span>Git и Github. Простые рецепты</span></h1> <div class="tm-article-snippet__hubs"><span class="tm-article-snippet__hubs-item"><a href="https://habr.com/ru/hub/git/" class="tm-article-snippet__hubs-item-link"><span>Git</span> <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span></a></span><span class="tm-article-snippet__hubs-item"><a href="https://habr.com/ru/hub/github/" class="tm-article-snippet__hubs-item-link"><span>GitHub</span> <!----></a></span></div> <div class="tm-article-snippet__labels"><div class="tm-article-snippet__label"><span>
+        Из песочницы
+      </span></div></div> <!----> <!----></div></div> <!----> <div data-gallery-root="" lang="ru" class="tm-article-body"><div id="post-content-body" class="article-formatted-body article-formatted-body_version-1"><div xmlns="http://www.w3.org/1999/xhtml">При разработке собственного проекта, рано или поздно, приходится задуматься о том, где хранить исходный код и как поддерживать работу с несколькими версиями. В случае работы на компанию, обычно это решается за вас и необходимо только поддерживать принятые правила. Есть несколько общеупотребимых систем контроля версий, и мы рассмотрим одну из самых популярных — это Git и сервис Github.<br>
+<br>
+Система Git появилась, как средство управления исходными текстами в операционной системе Linux и завоевала множество поклонников в среде Open Source.<br>
+<br>
+Сервис Github предоставляет хостинг (хранение) исходных текстов как на платной, так и на бесплатной основе. Это одна из крупнейших систем, которую любят Open Source пользователи. Основное отличие платной версии — это возможность создания частных репозиториев (хранилищ) исходных текстов и если вам скрывать нечего, то можете спокойно пользоваться бесплатной версией.<br>
+<br>
+После того, как вы начали работу над проектом и написали какой-то работающий прототип, у вас появится желание сохранить результаты работы. Это так же может быть полезно в случае, если вы захотите продолжить работу на другом компьютере. Самое простое решение — это сохранить все на флешке. Этот вариант неплохо работает, но если есть подключение к интернету (а сейчас у кого его нет), то удобно воспользоваться системами Git/Github.<br>
+<br>
+В этой статье будут описаны базовые сценарии использования систем Git/Github при работе над проектом в среде Linux с помощью командной строки. Все примеры проверялись на системе с Linux Ubuntu 14.04 и Git 1.9.1. Если вы пользуетесь другим дистрибутивом, то возможны отличия.<br>
+<a name="habracut"></a><br>
+<h4>Создание локального репозитория</h4><br>
+Предположим, что ваш проект находится в папке <i>/home/user/project</i>. Перед тем, как сохранять исходники, можно посмотреть, нет ли временных файлов в папке с проектом и по возможности их удалить.<br>
+<br>
+Для просмотра папки удобно воспользоваться командой <i>tree</i>, которая покажет не только содержимое каждой папки, но и древовидную структуру директорий.<br>
+<br>
+Часто временные файлы содержат специфические суффиксы, по которым их легко обнаружить и в последствии удалить. Для поиска таких файлов можно воспользоваться командой <i>find</i>. В качестве примера посмотрим, как найти все файлы, которые генерируются компилятором Python и имеют расширение <i>.pyc</i><br>
+<br>
+Переходим в папку с проектом <i>/home/user/project</i>:<br>
+<br>
+<pre><code class="bash hljs"><span class="hljs-built_in">cd</span> /home/user/project
+</code></pre><br>
+И показываем список файлов с расширением <i>.pyc</i>:<br>
+<br>
+<pre><code class="bash hljs">find . -name *.pyc
+</code></pre><br>
+Эта команда выведет список всех файлов с расширением <i>.pyc</i> в текущей директории и в ее поддиректориях. Для удаления найденных файлов, достаточно добавить ключ <i>-delete</i> к этой команде:<br>
+<br>
+<pre><code class="bash hljs">find . -name *.pyc -delete
+</code></pre><br>
+Очень рекомендуется не спешить и сразу ключ этот не добавлять. Первый раз вызвать команду для просмотра файлов и только убедившись, что в список не попало ничего полезного добавить ключ удаления.<br>
+<br>
+Создадим локальный репозиторий в папке с проектом:<br>
+<br>
+<pre><code class="bash hljs">git init
+</code></pre><br>
+После выполнения этой команды появится новая папка с именем <i>.git</i>. В ней будет несколько файлов и поддиректориев. На данный момент система управления версиями еще не видит наших файлов.<br>
+<br>
+<h4>Добавление файлов в локальный репозиторий</h4><br>
+Для добавления файлов используется команда:<br>
+<br>
+<pre><code class="bash hljs">git add readme
+</code></pre><br>
+После выполнения команды, файл <i>readme</i> будет добавлен в систему управления версий (конечно если он уже был то этого в проекте). При добавлении файла генерируется хеш значение, которое выглядит примерно так:<br>
+<br>
+<pre><code class="bash hljs">9f2422325cef705b7682418d05a538d891bad5c8
+</code></pre><br>
+Добавленные файлы хранятся в папке <i>.git/objects/xx/yyyyyyyy</i>, при этом первые 2 цифры хеша ипользуются для указания директории, а остальное хеш значение является именем файла. Наш добавленный файл будет находится здесь:<br>
+<br>
+<pre><code class="bash hljs">.git/objects/9f/2422325cef705b7682418d05a538d891bad5c8
+</code></pre><br>
+Что легко увидеть с помощью команды:<br>
+<br>
+<pre><code class="bash hljs">ls .git/objects
+</code></pre><br>
+Сам файл является архивом, который легко распаковать и вывести на экран, указав полное значение хеша.<br>
+<br>
+<pre><code class="bash hljs">git cat-file -p 9f2422325cef705b7682418d05a538d891bad5c8
+</code></pre><br>
+Для того, чтобы добавить все файлы из текущей директории введите:<br>
+<br>
+<pre><code class="bash hljs">git add .
+</code></pre><br>
+Если нужно добавить файлы из текущей директории и из всех поддиректориев, то используйте:<br>
+<br>
+<pre><code class="bash hljs">git add --all
+</code></pre><br>
+Для того, чтобы в систему не попадали временные файлы, можно их занести в файл <i>.gitignore</i>, который нужно создать самостоятельно и разместить в корневом каталоге проекта (на том же уровне, что и <i>.git</i> директория).<br>
+<br>
+Например, если в в файл <i>.gitignore</i> добавить следующую строчку <i>*.pyc</i>, то все файлы с расширением <i>.pyc</i> не будут добавляться в репозиторий.<br>
+<br>
+После добавления файлов, все изменения находятся в так называемой <i>staging</i> (или <i>cached</i>) <i>area</i>. Это некоторое временнное хранилище, которое используется для накопления изменений и из которого создаются собственно версии проектов (<i>commit</i>).<br>
+<br>
+Для просмотра текущего состояния можно воспользоваться командой:<br>
+<br>
+<pre><code class="bash hljs">git status
+</code></pre><br>
+После выполнения команды мы увидим, что в <i>stage area</i> находится наш файл:<br>
+<br>
+<pre><code class="bash hljs">new file:   readme
+</code></pre><br>
+Если вы продолжите вносить изменения в файл <i>readme</i>, то после вызова команды <i>git status</i> вы увидите две версии файла.<br>
+<br>
+<pre><code class="bash hljs">new file:   readme
+
+modified:   readme
+</code></pre><br>
+Чтобы добавить новые изменения достаточно повторить команду. Команда <i>git add</i> не только добавляет новые файлы, но и все изменения файлов, которые были добавлены ранее.<br>
+<br>
+<pre><code class="bash hljs">git add readme
+</code></pre><br>
+Можно отменить добавления файла <i>readme</i> в <i>staging area</i> с помощью команды:<br>
+<br>
+<pre><code class="bash hljs">git rm --cached readme
+</code></pre><br>
+После выполнения команды, файл <i>readme</i> отметится, как неизмененный системой.<br>
+<br>
+<h4>Создание версии проекта</h4><br>
+После того, как мы добавили нужные файлы в <i>staging area</i> мы можем создать версию проекта. С помощью команды:<br>
+<br>
+<pre><code class="bash hljs">git commit -m <span class="hljs-string">"comment"</span>
+</code></pre><br>
+Каждая новая версия сопровождается комментарием.<br>
+<br>
+После коммита, мы сможем найти два новых объекта внутри <i>.git</i> репозитория.<br>
+<br>
+<pre><code class="bash hljs">.git/objects/9f/2422325cef705b7682418d05a538d891bad5c8
+.git/objects/65/7ab4c07bd3914c7d66e4cb48fe57f5c3aa7026
+.git/objects/da/c6721c3b75fcb3c9d87b18ba4cef2e15e0a3d3
+</code></pre><br>
+Посмотрим, что внутри:<br>
+<br>
+<pre><code class="bash hljs">git cat-file -t 657ab4c07bd3914c7d66e4cb48fe57f5c3aa7026
+</code></pre><br>
+Ключ <i>-t</i> показывает тип объекта. В результате мы видим:<br>
+<br>
+<pre><code class="bash hljs">commit
+</code></pre><br>
+Для второго объекта:<br>
+<br>
+<pre><code class="bash hljs">git cat-file -t dac6721c3b75fcb3c9d87b18ba4cef2e15e0a3d3
+</code></pre><br>
+Результат:<br>
+<br>
+<pre><code class="bash hljs">tree
+</code></pre><br>
+Для самого первого файла:<br>
+<br>
+<pre><code class="bash hljs">git cat-file -t 9f2422325cef705b7682418d05a538d891bad5c8
+</code></pre><br>
+Мы видим:<br>
+<br>
+<pre><code class="bash hljs">blob
+</code></pre><br>
+Если мы будем дальше изучать содержимое этих файлов, то обнаружим древовидную структуру. От каждого коммита можно по ссылкам пройти по всем измененным файлам. Для практического применения это не очень нужно, но возможно так будет легче понять, что происходит при работе с системой Git.<br>
+<br>
+Самую первую версию отменить нельзя. Ее можно только исправить. Если вы хотите добавить изменения в последнюю версию, то после выполнения команды <i>commit</i>, добавляете необходимые изменения и вызываете:<br>
+<br>
+<pre><code class="bash hljs">git commit -m <span class="hljs-string">"comment"</span> --amend
+</code></pre><br>
+Или так:<br>
+<br>
+<pre><code class="bash hljs">git commit --amend --no-edit
+</code></pre><br>
+Ключ <i>--no-edit</i> нужен, чтобы не вводить заново комментарий.<br>
+<br>
+Можно просмотреть изменения, которые вы внесли последним коммитом:<br>
+<br>
+<pre><code class="bash hljs">git show
+</code></pre><br>
+Или так:<br>
+<br>
+<pre><code class="bash hljs">git show --name-only
+</code></pre><br>
+Ключ <i>--name-only</i> нужен, чтобы показывать только имена измененный файлов. Без него по каждому измененнному файлу будет выдан список всех изменений.<br>
+<br>
+Если вы продолжили работать и изменили только те файлы, которые были уже добавлены в систему командой <i>git add</i>, вы можете сделать коммит одной командой:<br>
+<br>
+<pre><code class="bash hljs">git commit -a -m <span class="hljs-string">"comment"</span>
+</code></pre><br>
+Для просмотра списка всех коммитов, воспользуйтесь командой:<br>
+<br>
+<pre><code class="bash hljs">git <span class="hljs-built_in">log</span>
+</code></pre><br>
+Или так:<br>
+<br>
+<pre><code class="bash hljs">git <span class="hljs-built_in">log</span> --oneline
+</code></pre><br>
+Ключ <i>--oneline</i> нужен, чтобы уменьшить количество информации выдаваемой на экран. С этим ключем каждый коммит показывается в одну строчку. Например:<br>
+<br>
+<pre><code class="bash hljs">2b82e80 update
+657ab4c first
+</code></pre><br>
+Для того, чтобы просмотреть изменения по конкретному коммиту, достаточно в команду <i>git show</i> добавить хеш значение коммита, которое можно получить с помощью предыдущей команды.<br>
+<br>
+<pre><code class="bash hljs">git show 657ab4c 
+</code></pre><br>
+Для отмены последнего коммита (кроме самого первого) можно воспользоваться следующей командой:<br>
+<br>
+<pre><code class="bash hljs">git reset HEAD~1
+</code></pre><br>
+Для того чтобы удалить все файлы в папке, которые не относятся к проекту и не сохранены в репозитории, можно воспользоваться командой:<br>
+<br>
+<pre><code class="bash hljs">git clean -df
+</code></pre><br>
+<h4>Создание репозитория на Github</h4><br>
+До текущего момента мы работали с локальным репозиторием, который сохранялся в папке на компьютере. Если мы хотим иметь возможность сохранения проекта в интернете, создадим репозиторий на Github. Для начала нужно зарегистрироваться на сайте <i>github.com</i> под именем <i>myuser</i> (в вашем случае это может быть любое другое имя).<br>
+<br>
+После регистрации нажимаем кнопочку <i>"+"</i> и вводим название репозитория. Выбираем тип <i>Public</i> (репозиторий всегда <i>Public</i> для бесплатной версии) и нажимаем <i>Create</i>.<br>
+<br>
+В результате мы создали репозиторий на сайте Github. На экране мы увидим инструкцию, как соединить наш локальный репозиторий со вновь созданным. Часть команд нам уже знакома.<br>
+<br>
+Добавляем удаленный репозиторий (по протоколу SSH) под именем <i>origin</i> (вместо <i>origin</i> можно использовать любое другое имя).<br>
+<br>
+<pre><code class="bash hljs">git remote add origin git@github.com:myuser/project.git
+</code></pre><br>
+Можем просмотреть результат добавления с помощью команды:<br>
+<br>
+<pre><code class="bash hljs">git remote -v
+</code></pre><br>
+Если все было правильно сделано, то увидим:<br>
+<br>
+<pre><code class="bash hljs">origin git@github.com:myuser/project.git (fetch)
+origin git@github.com:myuser/project.git (push)
+</code></pre><br>
+Для того, чтобы отменить регистрацию удаленного репозитария введите:<br>
+<br>
+<pre><code class="bash hljs">git remote rm origin
+</code></pre><br>
+Это может понадобиться, если вы захотите поменять <i>SSH</i> доступ на <i>HTTPS</i>. После этого можно добавить его опять, например под именем <i>github</i> и протоколом <i>HTTPS</i>.<br>
+<br>
+<pre><code class="bash hljs">git remote add github https://github.com/myuser/project.git
+</code></pre><br>
+Следующей командой вы занесете все изменения, которые были сделаны в локальном репозитории на Github.<br>
+<br>
+<pre><code class="bash hljs">git push -u github master
+</code></pre><br>
+Ключ <i>-u</i> используется для того, чтобы установить связь между удаленным репозиторием <i>github</i> и вашей веткой <i>master</i>. Все дальнейшие изменения вы можете переносить на удаленный репозиторий упрощенной командой.<br>
+<br>
+<pre><code class="bash hljs">git push
+</code></pre><br>
+<h4>Перенос репозитория на другой компьютер</h4><br>
+После того, как репозиторий был создан на Github, его можно скопировать на любой другой компьютер. Для этого применяется команда:<br>
+<br>
+<pre><code class="bash hljs">git <span class="hljs-built_in">clone</span> https://github.com/myuser/project.git
+</code></pre><br>
+Результатом выполнения этой команды будет создание папки <i>project</i> в текущем каталоге. Эта папка также будет содержать локальный репозиторий (то есть папку <i>.git</i>).<br>
+<br>
+Так же можно добавить название папки, в которой вы хотите разместить локальный репозиторий.<br>
+<br>
+<pre><code class="bash hljs">git <span class="hljs-built_in">clone</span> https://github.com/myuser/project.git &lt;myfolder&gt;
+</code></pre><br>
+<h4>Работа с одним репозиторием с разных компьютеров</h4><br>
+С одним репозиторием с разных компьютеров может работать несколько разработчиков или вы сами, если например работаете над одним и тем же проектом дома и на работе.<br>
+<br>
+Для получения обновлений с удаленного репозитория воспользуйтесь командой:<br>
+<br>
+<pre><code class="bash hljs">git pull
+</code></pre><br>
+Если вы изменили ваши локальные файлы, то команда <i>git pull</i> выдаст ошибку. Если вы уверены, что хотите перезаписать локальные файлы, файлами из удаленного репозитория то выполните команды:<br>
+<br>
+<pre><code class="bash hljs">git fetch --all
+git reset --hard github/master
+</code></pre><br>
+Вместо <i>github</i> подставьте название вашего удаленного репозитория, которое вы зарегистрировали командой <i>git push -u</i>.<br>
+<br>
+Как мы уже знаем, для того чтобы изменения выложить на удаленный репозиторий используется команда:<br>
+<br>
+<pre><code class="bash hljs">git push
+</code></pre><br>
+В случае, если в удаленном репозитории лежат файлы с версией более новой, чем у вас в локальном, то команда <i>git push</i> выдаст ошибку. Если вы уверены, что хотите перезаписать файлы в удаленном репозитории несмотря на конфликт версий, то воспользуйтесь командой:<br>
+<br>
+<pre><code class="bash hljs">git push -f
+</code></pre><br>
+Иногда возникает необходимость отложить ваши текущие изменения и поработать над файлами, которые находятся в удаленном репозитории. Для этого отложите текущие изменения командой:<br>
+<br>
+<pre><code class="bash hljs">git stash
+</code></pre><br>
+После выполнения этой команды ваша локальная директория будет содержать файлы такие же, как и при последнем коммите. Вы можете загрузить новые файлы из удаленного репозитория командой <i>git pull</i> и после этого вернуть ваши изменения которые вы отложили командой:<br>
+<br>
+<pre><code class="bash hljs">git stash pop
+</code></pre><br>
+<h4>Заключение</h4><br>
+Мы рассмотрели базовые сценарии работы с системами Git и Github. Каждая приведенная выше команда имеет значительно больше ключей и соответственно возможностей. Постепенное их изучение даст вам возможность легко оберегать свои иходники и больше концентрироваться непосредственно на разработке.</div></div> <!----> <!----></div> <div class="tm-article-presenter__meta"><div class="tm-separated-list tm-article-presenter__meta-list"><span class="tm-separated-list__title">Теги:</span> <ul class="tm-separated-list__list"><li class="tm-separated-list__item"><a href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bgit%5D" class="tm-tags-list__link">git</a></li><li class="tm-separated-list__item"><a href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bgithub%5D" class="tm-tags-list__link">github</a></li></ul></div> <div class="tm-separated-list tm-article-presenter__meta-list"><span class="tm-separated-list__title">Хабы:</span> <ul class="tm-separated-list__list"><li class="tm-separated-list__item"><a href="https://habr.com/ru/hub/git/" class="tm-hubs-list__link">
+    Git
+  </a></li><li class="tm-separated-list__item"><a href="https://habr.com/ru/hub/github/" class="tm-hubs-list__link">
+    GitHub
+  </a></li></ul></div></div></article></div> <!----></div> <div class="tm-article-sticky-panel" style="display: none;"><div class="tm-data-icons tm-article-sticky-panel__icons"><div class="tm-article-rating tm-data-icons__item"><div class="tm-votes-meter tm-article-rating__votes-switcher"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_medium"><title>Всего голосов 35: ↑11 и ↓24</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 35: ↑11 и ↓24" class="tm-votes-meter__value tm-votes-meter__value_negative tm-votes-meter__value_medium">-13</span></div> <div class="v-portal" style="display:none;"></div></div> <!----> <span title="Количество просмотров" class="tm-icon-counter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">288K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    316
+  </span></button> <!----> <div title="Поделиться" class="tm-sharing tm-data-icons__item"><button type="button" class="tm-sharing__button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="tm-sharing__icon"><path fill="currentColor" d="M10.33.275l9.047 7.572a.2.2 0 010 .306l-9.048 7.572a.2.2 0 01-.328-.153V11c-8 0-9.94 6-9.94 6S-1 5 10 5V.428a.2.2 0 01.328-.153z"></path></svg></button> <!----></div> <div class="v-portal" style="display:none;"></div></div> </div></div> <!----> <!----> <div class="tm-article-presenter__footer"><div class="tm-article-blocks"><div class="tm-editoral-subscription"><span class="tm-svg-icon__wrapper tm-editoral-subscription__close"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Закрыть</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#close"></use></svg></span> <h3 class="tm-editoral-subscription__title">
+    Редакторский дайджест
+  </h3> <p class="tm-editoral-subscription__description">
+    Присылаем лучшие статьи раз&nbsp;в&nbsp;месяц
+  </p> <form method="GET" class="tm-editoral-subscription__form"><div class="tm-input-text-decorated tm-editoral-subscription__input tm-input-text-decorated_has-label-after" name="email" placeholder="Электропочта" type="email"><!----> <input name="email" placeholder="Электропочта" type="email" class="tm-input-text-decorated__input"> <div class="tm-input-text-decorated__label tm-input-text-decorated__label_after"><button type="submit" class="tm-editoral-subscription__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class=""><path fill="currentColor" clip-rule="evenodd" d="M19.707 11.293a1 1 0 010 1.414l-5.5 5.5a1 1 0 01-1.414-1.414L16.586 13H5a1 1 0 110-2h11.586l-3.793-3.793a1 1 0 011.414-1.414l5.5 5.5z"></path></svg></button></div></div> <!----></form></div> <section class="tm-block tm-block_spacing-bottom"><!----> <div class="tm-block__body tm-block__body_variant-balanced"><div class="tm-article-author"> <div class="tm-user-card tm-article-author__user-card tm-user-card_variant-article"><div class="tm-user-card__info-container"><div class="tm-user-card__header"><div class="tm-user-card__header-data"><a href="https://habr.com/ru/users/sunduchkov/" class="tm-user-card__userpic tm-user-card__userpic_size-40"><div class="tm-entity-image"><img alt="" src="./Git и Github. Простые рецепты _ Хабр_files/e03ab3a71f0c72bc5503bcb078d8bc2c(1).jpg" class="tm-entity-image__pic"></div></a> <div class="tm-user-card__meta"><div title=" 14 голосов " class="tm-karma tm-user-card__karma"><div class="tm-karma__votes tm-karma__votes_positive">
+    2
+  </div> <div class="tm-karma__text">
+    Карма
+  </div></div> <div title="Рейтинг пользователя" class="tm-rating tm-user-card__rating"><div class="tm-rating__header"> <div class="tm-rating__counter">0</div></div> <div class="tm-rating__text">
+    Рейтинг
+  </div></div></div></div></div> <div class="tm-user-card__info tm-user-card__info_variant-article"><div class="tm-user-card__title tm-user-card__title_variant-article"><!----> <a href="https://habr.com/ru/users/sunduchkov/" class="tm-user-card__nickname tm-user-card__nickname_variant-article">
+          @sunduchkov
+        </a> <!----></div> <p class="tm-user-card__short-info tm-user-card__short-info_variant-article">Программист</p></div></div> <div class="tm-user-card__buttons tm-user-card__buttons_variant-article"><!----> <!----> <!----> <!----> <!----></div></div> <div class="tm-article-author__user-contacts"><a href="skype:sunduchkov" rel="noopener" target="_blank" class="tm-article-author__contact">
+      Skype
+    </a></div></div> <div class="v-portal" style="display:none;"></div></div> <!----></section> <div class="tm-article-blocks__comments"><div class="tm-article-page-comments"><div class="tm-article-comments-counter-link tm-article-comments-counter-button"><a href="https://habr.com/ru/post/273897/comments/" class="tm-article-comments-counter-link__link tm-article-comments-counter-link__link_button-style"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon tm-article-comments-counter-link__icon_contrasted"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value tm-article-comments-counter-link__value_contrasted">
+       Комментарии 15 
+    </span></a> <!----></div></div></div> <div class="tm-ad-banner__container tm-page-article__banner"><!----> <div id="articleBottomBanner" class="tm-ad-banner"></div></div> <section class="tm-block tm-block_spacing-around"><header class="tm-block__header"><h2 class="tm-block__title">Похожие публикации</h2> <!----></header> <div class="tm-block__body"><ul class="tm-article-list-block__list"><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2020-04-13T17:07:20.000Z" title="2020-04-13, 22:07">13  апреля  2020 в 22:07</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/company/alconost/news/t/497088/" class="tm-article-title__link"><span>Git празднует пятнадцатилетие</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 17: ↑16 и ↓1</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 17: ↑16 и ↓1" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+15</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">3K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    6
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/alconost/news/t/497088/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      5
+    </span></a> <a href="https://habr.com/ru/company/alconost/news/t/497088/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +5
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2020-02-13T08:30:02.000Z" title="2020-02-13, 13:30">13  февраля  2020 в 13:30</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/company/itsumma/news/t/488170/" class="tm-article-title__link"><span>Вышла бета консольной утилиты GitHub CLI</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 20: ↑20 и ↓0</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 20: ↑20 и ↓0" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+20</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">4.4K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    14
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/itsumma/news/t/488170/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      6
+    </span></a> <a href="https://habr.com/ru/company/itsumma/news/t/488170/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +6
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2012-11-19T13:58:30.000Z" title="2012-11-19, 19:58">19  ноября  2012 в 19:58</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/company/epam_systems/blog/159309/" class="tm-article-title__link"><span>Git &amp; Github глазами очевидца</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 23: ↑17 и ↓6</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 23: ↑17 и ↓6" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+11</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">19K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    79
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/epam_systems/blog/159309/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      10
+    </span></a> <a href="https://habr.com/ru/company/epam_systems/blog/159309/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +10
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li> <!----></ul></div> <!----></section> <section class="tm-block tm-block_spacing-around"><header class="tm-block__header"><h2 class="tm-block__title">Минуточку внимания</h2> <div class="tm-block__header-aside"><a href="https://tmtm.ru/megapost/" target="_blank" class="tm-block-extralink">
+      Разместить
+    </a></div></header> <div class="tm-block__body"><div pagination="" slides-per-view="1" class="tm-promo-block__content-wrapper"><div class="tm-promo-block__item-wrapper"><a href="https://effect.habr.com/s/aCnjM09-dmzvIEQO1M3RfA.DbNKoe1XBPREP4xc4SgQzBnWz0vdqytQ2OMPqxi2rU2HpFivTzQG2A17GYlbAf1noYGNBeB8h4h_ba55MV9e7lpHIYI3Xc0DgzKf0AsMz1Y" rel="nofollow " class="tm-promo-block__item tm-article-title__link"><header class="tm-promo-block__head"><div class="tm-promo-block__image-wrapper"><img alt="" src="https://effect.habr.com/s/IW1lTWm-hq3s5jRcRkTxEg.L-trb9oDEHn3e52M6YvAWIyzFet1oK5Wu9CNLBZBQPdcLj2WLmfaSYBTObJzrF0xriWWE8-1zSWY-KZTr2Hbe1H5azq0IyTnDaXlt1ZII3fdii12h3EFNcj9aGPqww2rYZR3RTTOgL7T1jhUwt9TWCBXOjUwK30Bq6EXZr2jKc8" class="tm-promo-block__image"></div> <div class="tm-promo-block__label">
+              Мегапост
+              <!----></div></header> <div class="tm-promo-block__info"><h3 class="tm-promo-block__title">Город, которого нет: OFDMA, MU-MIMO и 802.11ах</h3></div></a></div><div class="tm-promo-block__item-wrapper"><a href="https://effect.habr.com/s/olsEL-tulkn1uVKhEkOILA._M0yCwOVtpEW3hzL1xdwJpNRGwy-tyvesgDUAdioAIIRLlrO_KHY2apcwDezdZlqpYSwaZaG_faQXSThDYGjwA" rel="nofollow " class="tm-promo-block__item tm-article-title__link"><header class="tm-promo-block__head"><div class="tm-promo-block__image-wrapper"><img alt="" src="https://effect.habr.com/s/UCN6i4DWoyV-zZgvzjt3ZQ.-JBsdYU2BCnrpRzsiXWSfaIIe_aD1e4xbevisQQGHjltn7rpOJPowB8BfoDBu9047PUf16tB5Czui57DBV8uJEhupd4dRERz8dwJzO44QkkHuhiW0PJz-fvAP-46-sxW0vtexO8wP--QFSLJQi6dC25esxKP_tlJfYuCOCcocSeJjWOtOsecJvaC_xU-_b7z" class="tm-promo-block__image"></div> <div class="tm-promo-block__label">
+              Турбо
+              <!----></div></header> <div class="tm-promo-block__info"><h3 class="tm-promo-block__title">Айтишный пицца-квест</h3></div></a></div><div class="tm-promo-block__item-wrapper"><a href="https://effect.habr.com/s/VfCItE_zhqFtegUVddckNQ.bhtVDEGg-H7uKpQvGT1V99Fw-tKxYohpoKB4gbbcz2qi8d2KyBcxurOpMbVtIRZC3vYVwXR4VwnwFDwbrY7DwqQtV30P9QXCJErWMSGldic" rel="nofollow " class="tm-promo-block__item tm-article-title__link"><header class="tm-promo-block__head"><div class="tm-promo-block__image-wrapper"><img alt="" src="https://effect.habr.com/s/olLr4JC-m91UTCUyC6ax1g.igCEt-8GH3APLqLjy00rwqMLtVyvygHVgRVb-EAAV65GIbj1aFEJsvpD5JOUkHevWVAYyH2I-iTVEoa2Dl0HAwaV9PHmMWdKYqoZFxbCCR_QD71eMSS8fYdTX7lOjurGFq08Vq0WLOrBz1phDMT3mrUjfciJWZsbMCEozyuF2nk" class="tm-promo-block__image"></div> <div class="tm-promo-block__label">
+              Мегапост
+              <!----></div></header> <div class="tm-promo-block__info"><h3 class="tm-promo-block__title">Смотрим на изобретения, получившие James Dyson Award</h3></div></a></div></div></div> <!----></section> <div class="tm-project-block tm-project-block_variant-tasks"><div class="tm-project-block__header"><div class="tm-project-block__title"><a href="https://freelance.habr.com/tasks?utm_campaign=tasks_postlist&amp;utm_content=tasks&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block__title-link">Заказы</a></div></div> <div class="tm-project-block__content"><ul class="tm-project-block-items"><li class="tm-project-block-items__item"><a href="http://freelance.habr.com/tasks/400077?utm_campaign=tasks_postlist&amp;utm_content=task&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block-items__detail tm-project-block-items__title"><!---->Удаленно настроить Asterisk FreePBX + GOIP-4 шлюз
+    </a> <div class="tm-project-block-items__properties"><span class="tm-project-block-items__property-item">1500 руб./за проект</span><span class="tm-project-block-items__property-item">1 отклик</span><span class="tm-project-block-items__property-item">15 просмотров</span></div></li><li class="tm-project-block-items__item"><a href="http://freelance.habr.com/tasks/399945?utm_campaign=tasks_postlist&amp;utm_content=task&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block-items__detail tm-project-block-items__title"><!---->Доработка сервиса на go 
+    </a> <div class="tm-project-block-items__properties"><span class="tm-project-block-items__property-item">1700 руб./в час</span><span class="tm-project-block-items__property-item">5 откликов</span><span class="tm-project-block-items__property-item">33 просмотра</span></div></li><li class="tm-project-block-items__item"><a href="http://freelance.habr.com/tasks/399915?utm_campaign=tasks_postlist&amp;utm_content=task&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block-items__detail tm-project-block-items__title"><!---->NFT маркет
+    </a> <div class="tm-project-block-items__properties"><span class="tm-project-block-items__property-item">50000 руб./за проект</span><span class="tm-project-block-items__property-item">7 откликов</span><span class="tm-project-block-items__property-item">51 просмотр</span></div></li><li class="tm-project-block-items__item"><a href="http://freelance.habr.com/tasks/399861?utm_campaign=tasks_postlist&amp;utm_content=task&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block-items__detail tm-project-block-items__title"><!---->Поддержка open-source редактора Notepad2e (C, C++, Scintilla, Windows)
+    </a> <div class="tm-project-block-items__properties"><span class="tm-project-block-items__property-item">2000 руб./в час</span><span class="tm-project-block-items__property-item">4 отклика</span><span class="tm-project-block-items__property-item">33 просмотра</span></div></li><li class="tm-project-block-items__item"><a href="http://freelance.habr.com/tasks/399831?utm_campaign=tasks_postlist&amp;utm_content=task&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block-items__detail tm-project-block-items__title"><!---->Разработка двух API (доработка одного) их Взаимодействия, NodeJS
+    </a> <div class="tm-project-block-items__properties"><span class="tm-project-block-items__property-item">100000 руб./за проект</span><span class="tm-project-block-items__property-item">12 откликов</span><span class="tm-project-block-items__property-item">51 просмотр</span></div></li></ul></div> <div class="tm-project-block__footer"><a href="https://freelance.habr.com/tasks?utm_campaign=tasks_postlist&amp;utm_content=tasks_all&amp;utm_medium=habr_block&amp;utm_source=habr_mob" rel="noopener" target="_blank" class="tm-project-block__link">Больше заказов на Хабр Фрилансе</a></div></div> <section class="tm-block tm-block_spacing-around"><header class="tm-block__header"><h2 class="tm-block__title">Лучшие публикации за сутки</h2> <!----></header> <div class="tm-block__body"><ul class="tm-article-list-block__list"><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2021-11-13T11:05:12.000Z" title="2021-11-13, 16:05">сегодня в 16:05</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/company/headzio/blog/588961/" class="tm-article-title__link"><span>Дефицит есть, а денег не дают. Почему?</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 109: ↑107 и ↓2</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 109: ↑107 и ↓2" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+105</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">12K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    63
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/headzio/blog/588961/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      69
+    </span></a> <a href="https://habr.com/ru/company/headzio/blog/588961/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +69
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2021-11-12T18:51:32.000Z" title="2021-11-12, 23:51">вчера в 23:51</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/post/588927/" class="tm-article-title__link"><span>Применение биполярных транзисторов с микроконтроллерами</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 61: ↑61 и ↓0</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 61: ↑61 и ↓0" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+61</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">8.3K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    143
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/post/588927/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      36
+    </span></a> <a href="https://habr.com/ru/post/588927/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +36
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2021-11-12T19:31:37.000Z" title="2021-11-13, 00:31">сегодня в 00:31</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/post/585230/" class="tm-article-title__link"><span>Передача телевизионного сигнала через HackRF</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 31: ↑31 и ↓0</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 31: ↑31 и ↓0" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+31</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">4.3K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    34
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/post/585230/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      4
+    </span></a> <a href="https://habr.com/ru/post/585230/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +4
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2021-11-12T16:31:56.000Z" title="2021-11-12, 21:31">вчера в 21:31</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/post/588917/" class="tm-article-title__link"><span>Замыкания в Rust</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 28: ↑28 и ↓0</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 28: ↑28 и ↓0" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+28</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">3.3K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    33
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/post/588917/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      1
+    </span></a> <a href="https://habr.com/ru/post/588917/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +1
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-block tm-article-snippet-block-block_preview"><div class="tm-article-snippet-block__user-meta"><div class="tm-article-snippet-block__date"><time datetime="2021-11-13T09:51:56.000Z" title="2021-11-13, 14:51">сегодня в 14:51</time></div></div> <h2 class="tm-article-title tm-article-title_block"><a href="https://habr.com/ru/company/selectel/blog/588857/" class="tm-article-title__link"><span>Некомими: обзор IBM ThinkPad S30</span></a></h2> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="16" width="16" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon_small"><title>Всего голосов 27: ↑27 и ↓0</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-rating"></use></svg> <span title="Всего голосов 27: ↑27 и ↓0" class="tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_small">+27</span></div> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">2.1K</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    4
+  </span></button> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/selectel/blog/588857/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      0
+    </span></a> <!----></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li> <!----></ul></div> <!----></section> </div></div></div></div></div> <div class="tm-page__sidebar"><div class="tm-layout-sidebar"><div class="tm-layout-sidebar__ads tm-layout-sidebar__ads_stick-bottom"><div class="tm-ad-banner__container tm-layout-sidebar__banner"><!----> <div id="sidebarBanner" class="tm-ad-banner"></div></div></div> <div class="tm-sexy-sidebar tm-sexy-sidebar_stick-bottom" style="margin-top: 0px;"><section class="tm-block tm-block_spacing-bottom"><header class="tm-block__header"><h2 class="tm-block__title">Читают сейчас</h2> <!----></header> <div class="tm-block__body"><ul class="tm-article-list-block__list"><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-sidebar tm-article-snippet-block-sidebar_preview"><!----> <h2 class="tm-article-title tm-article-title_sidebar"><a href="https://habr.com/ru/company/headzio/blog/588961/" class="tm-article-title__link"><span>Дефицит есть, а денег не дают. Почему?</span></a></h2> <div class="tm-data-icons"><!----> <!----> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">12K</span></span> <!----> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/headzio/blog/588961/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      69
+    </span></a> <a href="https://habr.com/ru/company/headzio/blog/588961/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +69
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-sidebar tm-article-snippet-block-sidebar_preview"><!----> <h2 class="tm-article-title tm-article-title_sidebar"><a href="https://habr.com/ru/company/ruvds/blog/588953/" class="tm-article-title__link"><span>«Зожный» перекус: безопасные перекусы для работников умственного труда</span></a></h2> <div class="tm-data-icons"><!----> <!----> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">5.7K</span></span> <!----> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/company/ruvds/blog/588953/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      15
+    </span></a> <a href="https://habr.com/ru/company/ruvds/blog/588953/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +15
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-sidebar tm-article-snippet-block-sidebar_preview"><!----> <h2 class="tm-article-title tm-article-title_sidebar"><a href="https://habr.com/ru/news/t/588967/" class="tm-article-title__link"><span>Rockstar сняла с продаж обновленную трилогию GTA на ПК</span></a></h2> <div class="tm-data-icons"><!----> <!----> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">6.1K</span></span> <!----> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/news/t/588967/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      14
+    </span></a> <a href="https://habr.com/ru/news/t/588967/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +14
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-sidebar tm-article-snippet-block-sidebar_preview"><!----> <h2 class="tm-article-title tm-article-title_sidebar"><a href="https://habr.com/ru/news/t/588943/" class="tm-article-title__link"><span>Стартап SpinLaunch использовал гигантскую центрифугу, чтобы забросить снаряд в верхние слои атмосферы</span></a></h2> <div class="tm-data-icons"><!----> <!----> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">6.5K</span></span> <!----> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/news/t/588943/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      49
+    </span></a> <a href="https://habr.com/ru/news/t/588943/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +49
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li><li class="tm-article-list-block__item"><article class="tm-article-snippet-block-sidebar tm-article-snippet-block-sidebar_preview"><!----> <h2 class="tm-article-title tm-article-title_sidebar"><a href="https://habr.com/ru/news/t/588983/" class="tm-article-title__link"><span>CNN: в Нидерландах задержали хакера из России</span></a></h2> <div class="tm-data-icons"><!----> <!----> <span class="tm-icon-counter tm-data-icons__item" title="Количество просмотров"><svg height="16" width="16" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">1K</span></span> <!----> <div class="tm-article-comments-counter-link tm-data-icons__item" title="Читать комментарии"><a href="https://habr.com/ru/news/t/588983/comments/" class="tm-article-comments-counter-link__link"><svg height="16" width="16" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v24.ce74655c.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      2
+    </span></a> <a href="https://habr.com/ru/news/t/588983/comments/" class="tm-article-comments-counter-link__link"><span title="Читать новые комментарии" class="tm-article-comments-counter-link__unread-counter">
+      +2
+    </span></a></div> <!----> <div class="v-portal" style="display: none;"></div></div></article></li> <li class="tm-article-list-block__item"><a href="https://u.habr.com/osnova_opros_chs" class="tm-most-reading-block__promo-post">Что ждёт open source в финтехе? Пройти опрос и узнать, как ответили другие</a> <div class="tm-most-reading-block__label">Опрос</div></li></ul></div> <!----></section> <!----></div></div></div></div></div></div></main> <!----></div> <div class="tm-footer-menu"><div class="tm-page-width"><div class="tm-footer-menu__container"><div class="tm-footer-menu__block"><h3 class="tm-footer-menu__block-title">
+          Ваш аккаунт
+        </h3> <div class="tm-footer-menu__block-content"><ul class="tm-footer-menu__list"><li class="tm-footer-menu__list-item"><a href="https://habr.com/kek/v1/auth/habrahabr/?back=/ru/post/273897/&amp;hl=ru" rel="nofollow" target="_self">
+                Войти
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/kek/v1/auth/habrahabr-register/?back=/ru/post/273897/&amp;hl=ru" rel="nofollow" target="_self">
+                Регистрация
+              </a></li></ul></div></div><div class="tm-footer-menu__block"><h3 class="tm-footer-menu__block-title">
+          Разделы
+        </h3> <div class="tm-footer-menu__block-content"><ul class="tm-footer-menu__list"><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/" class="footer-menu__item-link router-link-active">
+                Публикации
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/news/" class="footer-menu__item-link">
+                Новости
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/hubs/" class="footer-menu__item-link">
+                Хабы
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/companies/" class="footer-menu__item-link">
+                Компании
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/users/" class="footer-menu__item-link">
+                Авторы
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/sandbox/" class="footer-menu__item-link">
+                Песочница
+              </a></li></ul></div></div><div class="tm-footer-menu__block"><h3 class="tm-footer-menu__block-title">
+          Информация
+        </h3> <div class="tm-footer-menu__block-content"><ul class="tm-footer-menu__list"><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/docs/help/" class="footer-menu__item-link">
+                Устройство сайта
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/docs/authors/codex/" class="footer-menu__item-link">
+                Для авторов
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/docs/companies/corpblogs/" class="footer-menu__item-link">
+                Для компаний
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/docs/docs/transparency/" class="footer-menu__item-link">
+                Документы
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://account.habr.com/info/agreement" target="_blank">
+                Соглашение
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://account.habr.com/info/confidential/" target="_blank">
+                Конфиденциальность
+              </a></li></ul></div></div><div class="tm-footer-menu__block"><h3 class="tm-footer-menu__block-title">
+          Услуги
+        </h3> <div class="tm-footer-menu__block-content"><ul class="tm-footer-menu__list"><li class="tm-footer-menu__list-item"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQLwRfQmXibiUlWaRg-BAc38s7oM3lJiaPju7qmdJsp8ysIvZ_G-Npem0njJLMozE2bPHMpDqiI5hhy/pub?start=false&amp;loop=false&amp;delayms=60000&amp;slide=id.g91a03369cd_4_297" target="_blank">
+                Реклама
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habrastorage.org/storage/stuff/habr/service_price.pdf" target="_blank">
+                Тарифы
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQJJds8-Di7BQSP_guHxICN7woVYoN5NP_22ra-BIo4bqnTT9FR6fB-Ku2P0AoRpX0Ds-LRkDeAoD8F/pub?start=false&amp;loop=false&amp;delayms=60000" target="_blank">
+                Контент
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://tmtm.timepad.ru/" target="_blank">
+                Семинары
+              </a></li><li class="tm-footer-menu__list-item"><a href="https://habr.com/ru/megaprojects/" class="footer-menu__item-link">
+                Мегапроекты
+              </a></li></ul></div></div></div></div></div> <div class="tm-footer"><div class="tm-page-width"><div class="tm-footer__container"><!----> <div class="tm-footer__social"><a href="https://www.facebook.com/habrahabr.ru" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Facebook</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-facebook"></use></svg></a><a href="https://twitter.com/habr_com" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Twitter</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-twitter"></use></svg></a><a href="https://vk.com/habr" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>VK</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-vkontakte"></use></svg></a><a href="https://telegram.me/habr_com" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Telegram</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-telegram"></use></svg></a><a href="https://www.youtube.com/channel/UCd_sTwKqVrweTt4oAKY5y4w" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Youtube</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-youtube"></use></svg></a><a href="https://zen.yandex.ru/habr" rel="nofollow noopener noreferrer" target="_blank" class="tm-svg-icon__wrapper tm-social-icons__icon"><svg height="16" width="16" class="tm-svg-img tm-svg-icon"><title>Яндекс Дзен</title> <use xlink:href="/img/social-icons-sprite.svg#social-logo-zen"></use></svg></a></div> <div class="v-portal" style="display:none;"></div> <button class="tm-footer__link"><!---->
+        Настройка языка
+      </button> <a href="https://habr.com/ru/about" class="tm-footer__link">
+        О сайте
+      </a> <a href="https://habr.com/ru/feedback/" class="tm-footer__link">
+        Техническая поддержка
+      </a> <!----> <a href="https://habr.com/berserk-mode-nope" class="tm-footer__link">
+        Вернуться на старую версию
+      </a> <div class="tm-footer-copyright"><span class="tm-copyright"><span class="tm-copyright__years">© 2006–2021 </span> <span class="tm-copyright__name">«<a href="https://company.habr.com/" rel="noopener" target="_blank" class="tm-copyright__link">Habr</a>»</span></span></div></div></div></div> <!----> <!----></div> <div class="vue-portal-target"><!----></div></div>
+
+<script src="./Git и Github. Простые рецепты _ Хабр_files/chunk-vendors.881c3e9d.js.загрузка" defer=""></script><script src="./Git и Github. Простые рецепты _ Хабр_files/app.fdbba7e2.js.загрузка" defer=""></script>
+
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    </script>
+  
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(24049213, "init", {
+      defer:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:false,
+    });
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/24049213" style="position:absolute; left:-9999px;" alt="" />
+    </div>
+  </noscript>
+  
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        setTimeout(() => {
+          const img = new Image();
+          img.src = 'https://vk.com/rtrg?p=VK-RTRG-421343-57vKE';
+        }, 0);
+      });
+    </script>
+  
+
+
+<div><div><div class="Vue-Toastification__container top-left"></div></div><div><div class="Vue-Toastification__container top-center"></div></div><div><div class="Vue-Toastification__container top-right"></div></div><div><div class="Vue-Toastification__container bottom-left"></div></div><div><div class="Vue-Toastification__container bottom-center"></div></div><div><div class="Vue-Toastification__container bottom-right"></div></div></div><div id="K9Jn4i4Yhz" style="display: none;"></div><script>mendeleyWebImporter = {
+  downloadPdfs(t,e) { return this._call('downloadPdfs', [t,e]); },
+  open() { return this._call('open', []); },
+  setLoginToken(t) { return this._call('setLoginToken', [t]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.0039769338054287395', methodName, methodArgs }, 'https://habr.com');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
