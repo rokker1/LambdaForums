@@ -1,4 +1,5 @@
-﻿using LambdaForums.Models;
+﻿using LambdaForums.Data.Models;
+using LambdaForums.Models;
 using LambdaForums.Models.AccountViewModels;
 using LambdaForums.Services;
 using Microsoft.AspNetCore.Authentication;
