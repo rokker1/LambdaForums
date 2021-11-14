@@ -1,0 +1,13 @@
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\bin\Debug\netcoreapp2.0\LambdaForums.Service.deps.json
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\bin\Debug\netcoreapp2.0\LambdaForums.Service.dll
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\bin\Debug\netcoreapp2.0\LambdaForums.Service.pdb
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\bin\Debug\netcoreapp2.0\LambdaForums.Data.dll
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\bin\Debug\netcoreapp2.0\LambdaForums.Data.pdb
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.csproj.AssemblyReference.cache
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.AssemblyInfoInputs.cache
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.AssemblyInfo.cs
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.csproj.CoreCompileInputs.cache
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.csproj.CopyComplete
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.dll
+C:\Users\rokke\source\repos\LambdaForums\LambdaForums.Service\obj\Debug\netcoreapp2.0\LambdaForums.Service.pdb

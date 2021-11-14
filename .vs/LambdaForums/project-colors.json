@@ -15,7 +15,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "0d7791fa-1125-48f7-a7d2-1e7d99ff6635": {
+      "ProjectGuid": "0d7791fa-1125-48f7-a7d2-1e7d99ff6635",
+      "DisplayName": "LambdaForums.Service",
+      "ColorIndex": 2
+    },
+    "677fb0d5-9186-4c8f-b5d0-c847b15fa71f": {
+      "ProjectGuid": "677fb0d5-9186-4c8f-b5d0-c847b15fa71f",
+      "DisplayName": "LambdaForums.Service",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }
