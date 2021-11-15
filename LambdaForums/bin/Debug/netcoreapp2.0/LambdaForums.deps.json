@@ -28,6 +28,7 @@
       "LambdaForums/1.0.0": {
         "dependencies": {
           "LambdaForums.Data": "1.0.0",
+          "LambdaForums.Service": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
@@ -4410,6 +4411,17 @@
           "LambdaForums.Data.dll": {}
         }
       },
+      "LambdaForums.Service/1.0.0": {
+        "dependencies": {
+          "LambdaForums.Data": "1.0.0"
+        },
+        "runtime": {
+          "LambdaForums.Service.dll": {}
+        },
+        "compile": {
+          "LambdaForums.Service.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6723,6 +6735,11 @@
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
     "LambdaForums.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LambdaForums.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
