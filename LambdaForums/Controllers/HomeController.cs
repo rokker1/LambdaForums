@@ -5,7 +5,6 @@ using LambdaForums.Models.Forum;
 using LambdaForums.Models.Home;
 using LambdaForums.Models.Post;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Diagnostics;
 using System.Linq;
 
@@ -15,7 +14,7 @@ namespace LambdaForums.Controllers
     {
         private readonly IPost _postService;
 
-        protected HomeController(IPost postService)
+        public HomeController(IPost postService)
         {
             postService = _postService;
         }
