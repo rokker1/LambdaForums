@@ -16,7 +16,7 @@ namespace LambdaForums.Controllers
 
         public HomeController(IPost postService)
         {
-            postService = _postService;
+            _postService = postService;
         }
 
         public IActionResult Index()
