@@ -1,0 +1,9 @@
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\bin\Release\netcoreapp2.0\LambdaForums.Data.deps.json
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\bin\Release\netcoreapp2.0\LambdaForums.Data.dll
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\bin\Release\netcoreapp2.0\LambdaForums.Data.pdb
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.AssemblyInfoInputs.cache
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.AssemblyInfo.cs
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.csproj.CoreCompileInputs.cache
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.dll
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.pdb
