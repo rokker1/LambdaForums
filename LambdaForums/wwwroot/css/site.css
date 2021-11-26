@@ -235,7 +235,7 @@ btn-submitPost {
 .postAuthorRating {
     font-size: 0.9em;
     color: #159;
-    font-family: 'Roboto mono';
+    font-family: 'Roboto Mono';
 }
 #headingBtn{
     float: right;
@@ -293,7 +293,7 @@ btn-submitPost {
     font-size: 0.9em;
 }
 
-#forumlndexContent {
+.forumlndexContent {
     padding-bottom: 60px;
     background-color: white;
 }
