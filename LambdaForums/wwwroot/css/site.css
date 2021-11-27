@@ -104,6 +104,20 @@ navbar {
     margin: 4px 0 16px 0;
 }
 
+searchBar {
+    padding: Зpx 5px 2px 12px;
+    margin: 8px;
+    background-color: #000000;
+    width: 10%;
+    transition: ease .3s;
+    border: none;
+}
+
+.searchBar:focus {
+    color: black;
+    width: 60%;
+    background-color: #fff;
+}
 /*Post page*/
 
 .postTitle {
@@ -189,10 +203,17 @@ navbar {
     border-radius: 0px !important;
 }
 
-    .btn-newReply:hover {
-        background-color: #9FA8DA !important;
-        transition: ease-in 0.1s;
-    }
+.btn-forumSearch {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+
+.btn-newReply:hover {
+    background-color: #9FA8DA !important;
+    transition: ease-in 0.1s;
+}
 
 .btn-newPost {
     background-color: #c62828 !important;
@@ -237,12 +258,15 @@ btn-submitPost {
     color: #159;
     font-family: 'Roboto Mono';
 }
-#headingBtn{
+
+#headingBtn {
     float: right;
     margin-right: 20px;
 }
+
 #forumlndexTable td {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color:azure;
+    //background-color: rgba(255, 255, 255, 0.9);
 }
 
 #forumlndexTable tr:hover {
