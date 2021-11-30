@@ -4,10 +4,7 @@ using LambdaForums.Models.Forum;
 using LambdaForums.Models.Post;
 using LambdaForums.Models.Search;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace LambdaForums.Controllers
 {
