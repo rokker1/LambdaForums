@@ -15,5 +15,6 @@ namespace LambdaForums.Models.ApplicationUser
         public string ProfilelmageUrl { get; set; }
         public DateTime MemberSince { get; set; }
         public IFormFile ImageUpload { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

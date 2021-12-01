@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model LambdaForums.Models.ApplicationUser.ProfileModel
+@inject UserManager<LambdaForums.Data.Models.ApplicationUser> UserManager
+
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+            User Profile
+        </div>
+
+        @*@if (User.IsInRole("Admin"))
+            {
+
+            }*@
+
+    </div>
+    <div class="row userProfile">
+        <div class="col-md-4">
+            <div id="userProfileImage" style="background-image: url(@Model.ProfilelmageUrl)" ></div>
+            @if(User.Identity.Name == Model.UserName)
+            {
+                <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
+                    <div id="upload">
+                        <label class="btn btn-default btn-file">
+                            Browse <input type="file" name="file" style="display:none"/>
+                        </label>
+                    </div>
+                    <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                </form>
+            }
+        </div>
+    </div>
+    <div class="col-md-8"
+         <span id="userName">@Model.UserName.</span>
+            @if (Model.IsAdmin)
+            {
+                <span class="IsAdmin">Admin</span>
+            }
+                <span class="userRating">Current rating: @Model.UserRating</span>
+                <span class="userEmailLabel">Current rating: @Model.Email</span>
+                <span class="userCreatedLabel">Current rating: @Model.MemberSince</span>
+</div>
