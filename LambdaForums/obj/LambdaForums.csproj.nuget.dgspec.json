@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj": {}
+    "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
+    "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj",
+        "projectUniqueName": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj",
         "projectName": "LambdaForums.Data",
-        "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj",
-        "packagesPath": "C:\\Users\\rokke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\obj\\",
+        "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj",
+        "packagesPath": "C:\\Users\\alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rokke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.0"
@@ -76,23 +78,25 @@
         }
       }
     },
-    "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj": {
+    "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj",
+        "projectUniqueName": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj",
         "projectName": "LambdaForums.Service",
-        "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj",
-        "packagesPath": "C:\\Users\\rokke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\obj\\",
+        "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj",
+        "packagesPath": "C:\\Users\\alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rokke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.0"
@@ -105,8 +109,8 @@
           "netcoreapp2.0": {
             "targetAlias": "netcoreapp2.0",
             "projectReferences": {
-              "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
-                "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj"
+              "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
+                "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj"
               }
             }
           }
@@ -142,23 +146,25 @@
         }
       }
     },
-    "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj": {
+    "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj",
+        "projectUniqueName": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj",
         "projectName": "LambdaForums",
-        "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj",
-        "packagesPath": "C:\\Users\\rokke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums\\obj\\",
+        "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj",
+        "packagesPath": "C:\\Users\\alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rokke\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.0"
@@ -171,11 +177,11 @@
           "netcoreapp2.0": {
             "targetAlias": "netcoreapp2.0",
             "projectReferences": {
-              "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
-                "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj"
+              "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj": {
+                "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Data\\LambdaForums.Data.csproj"
               },
-              "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj": {
-                "projectPath": "C:\\Users\\rokke\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj"
+              "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj": {
+                "projectPath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums.Service\\LambdaForums.Service.csproj"
               }
             }
           }
