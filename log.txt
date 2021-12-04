@@ -1,0 +1,181 @@
+commit c0e9a2f003a0b94c12c87e4e3db7b5af43c75af9
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Thu Dec 2 21:26:02 2021 +0500
+
+    Lesson 23 is done!
+
+commit 2063bf42bd1e9f3fd812bbff0cdb0e7a2f958929
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Wed Dec 1 12:17:37 2021 +0500
+
+    Lesson 22 is done!
+
+commit 823c6b36a595f4a8e1bf10b11deb4a5b3c941fb6
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Tue Nov 30 20:53:56 2021 +0500
+
+    Lesson 21 is done!
+
+commit 9206833770fbdb9039696a07e81235aa10d921b7
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Mon Nov 29 10:16:40 2021 +0500
+
+    Lesson 18 is done!
+
+commit 9d876f725733fd837191e14fb0831b0c62d95539
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 28 21:35:48 2021 +0500
+
+    Lesson 18 is done!
+
+commit f816c8fc4be2d10959531261220d039912ae98fe
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sat Nov 27 23:20:09 2021 +0500
+
+    Lesson 17 is done!
+
+commit 92196eebcef3fe40f4176ada1be03f0d8f842ef4
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Fri Nov 26 20:11:00 2021 +0500
+
+    Lesson 16 is done!
+
+commit facd6efca377c5e483498a7a716f7a0e0cd96f43
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Thu Nov 25 20:50:19 2021 +0500
+
+    added db files
+
+commit 28bbda2ad591144f98efd832541bc29a94c4fe88
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Thu Nov 25 20:32:17 2021 +0500
+
+    Lesson 15 is done! 25.11.2021
+
+commit a4283524a48b7bfb96f7fed7d1a2310f45e5109d
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Wed Nov 24 20:48:40 2021 +0500
+
+    Lesson 14 is done! 24.11.2021
+
+commit d79e4ebe7e78322d15877746f488ab3bc0437f3e
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Tue Nov 23 20:36:06 2021 +0500
+
+    Lesson 13 is done (written in VS)!
+
+commit ebdbebc0d00e82a0a818b1d7c0f4b95140cc76a0
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Mon Nov 22 20:52:02 2021 +0500
+
+    Lesson 12 is done
+
+commit 00a91507808d216c589f78180cab8cbed11d60cb
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 21 18:44:37 2021 +0500
+
+    Lesson 11 is done 21/11/2021!
+
+commit 619551b5c5c25f64c4165092d952ad5655ba2bec
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sat Nov 20 14:27:41 2021 +0500
+
+    Lesson 10 is done. 20.11.2021
+
+commit 57b84b7eb94ece3f79ae152f8718265d35f9b630
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Thu Nov 18 20:43:29 2021 +0500
+
+    Lesson 8 is done. 18.11.2021
+
+commit abc8853751968f6158669849e9353bdf84c26e79
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Wed Nov 17 21:44:45 2021 +0500
+
+    Lesson 7 is done
+
+commit c554e28790adee137ef5210be31f2e8b5e2d87f7
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Tue Nov 16 21:24:19 2021 +0500
+
+    Lesson 6 is done 16.11.2021
+
+commit 02d90b6e3092fbd87516aea92b1d5cf853556054
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Mon Nov 15 20:06:39 2021 +0500
+
+    Lesson 5 is done. 15.11.2021
+
+commit 506698ca1203435d9046b0d5b813943942a40a69
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 16:40:48 2021 +0500
+
+    Lesson 4 finished 14.11.2021 16:40
+
+commit f709044a59e31953a41f62f9e39d23a647a6d8ef
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 16:02:21 2021 +0500
+
+    Add service Layer
+
+commit e20577653dd9fb50a1641495a526ed49a39e8db2
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 01:06:20 2021 +0500
+
+    #5
+
+commit 3f8379993190037b5ccbe4d2a1d0df7fbd65b7f8
+Merge: 7fdcfee 266d250
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 01:06:13 2021 +0500
+
+    #5
+
+commit 7fdcfeec5abfd173b5248de9856b7eeb0da843df
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 01:05:26 2021 +0500
+
+    in #5
+
+commit 266d250fae9272e0928badf2b5a3eee57af53ac6
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 01:00:21 2021 +0500
+
+    5 hello to you too
+
+commit e37403bbe7af88136e9c80b2625c7f47cc9a7170
+Merge: 184e1b0 896a2d2
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 00:59:30 2021 +0500
+
+    4
+
+commit 184e1b069e0e53299f13598ff3f52b4c53c1948d
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 00:54:12 2021 +0500
+
+    4
+
+commit 896a2d2bb9f60ff5cd802c8d20221c037a09c90f
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sun Nov 14 00:51:40 2021 +0500
+
+    #0004 Hello world
+
+commit ce3707791bde85131093d3da836b31b4430a376e
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sat Nov 13 22:10:42 2021 +0500
+
+    #0003. Added a cool tutorial about git
+
+commit 671e5534cc40b2529af5b921ef28eca1a6be087d
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sat Nov 13 22:00:12 2021 +0500
+
+    Commit #0002 13.11.2021
+
+commit 0779bcfcc460bf85e94adb393fa5f3f6e9f94255
+Author: A.E.Zhavoronkov <A.E.Zhavoronkov@urfu.me>
+Date:   Sat Nov 13 20:56:50 2021 +0500
+
+    Initial commit, create Data Project
