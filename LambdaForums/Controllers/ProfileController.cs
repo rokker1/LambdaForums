@@ -1,8 +1,10 @@
 ﻿using LambdaForums.Data;
 using LambdaForums.Data.Models;
 using LambdaForums.Models.ApplicationUser;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace LambdaForums.Controllers
 {
@@ -22,6 +24,7 @@ namespace LambdaForums.Controllers
         {
             var user = _userService.GetById(id);
             var userRoles = _userManager.GetRolesAsync(user).Result;
+
             var model = new ProfileModel()
             {
                 UserId = user.Id,
@@ -32,7 +35,20 @@ namespace LambdaForums.Controllers
                 ProfilelmageUrl = user.ProfileImageUrl,
                 IsAdmin = userRoles.Contains("Admin")
             };
+
+
+
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadProfileImage(IFormFile file)
+        {
+            var userId = _userManager.GetUserId(User);
+            //connect to azure
+            // get nlob container
+            //parse content
+            await 
         }
     }
 }

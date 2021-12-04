@@ -14,7 +14,7 @@
     <div class="row" id="postIndexContent">
         <div class="col-md-3 postAuthorContainer">
             <div class="postAuthorImage" style="background-image: url(@Model.AuthorImageUrl);"></div>
-            <a asp-asp-controller="Profile" asp-action="Detail" asp-route-is="@Model.AuthorId">
+            <a asp-controller="Profile" asp-action="Detail" asp-route-is="@Model.AuthorId">
                 @Model.AuthorName
             </a>
             <span class="postData">@Model.Created</span>
