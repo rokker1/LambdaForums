@@ -25,6 +25,7 @@ namespace LambdaForums.Data
                 UserName = "ForumAdmin",
                 NormalizedUserName = "forumadmin",
                 Email = "admin@example.com",
+                NormalizedEmail = "admin@example.com",
                 EmailConfirmed = true,
                 LockoutEnabled = false,
                 SecurityStamp = Guid.NewGuid().ToString(),
