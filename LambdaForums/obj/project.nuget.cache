@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1p/rczVNobqyUIDHXK1U8o6rcRFE/TTpPG+7d1qlth0eukdf/QVPth9G9v8psMv65fjBVJCXMzA1IvgSeMUEjQ==",
+  "dgSpecHash": "bwz3ElBUCYn+hCCPYrdSbFSch9MosJJHV+yLD7Hx4ijOt1ULdxy02sJ9mm2KtoBSmXTTjCX/WaUfmpaBRT9JOA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexander\\source\\repos\\LambdaForums\\LambdaForums\\LambdaForums.csproj",
   "expectedPackageFiles": [
@@ -313,7 +313,7 @@
     "C:\\Users\\alexander\\.nuget\\packages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512",
     "C:\\Users\\alexander\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\alexander\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\alexander\\.nuget\\packages\\windowsazure.storage\\8.1.4\\windowsazure.storage.8.1.4.nupkg.sha512"
+    "C:\\Users\\alexander\\.nuget\\packages\\windowsazure.storage\\8.4.0\\windowsazure.storage.8.4.0.nupkg.sha512"
   ],
   "logs": []
 }

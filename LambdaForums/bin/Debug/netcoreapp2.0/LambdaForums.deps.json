@@ -32,7 +32,8 @@
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.4"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.4",
+          "WindowsAzure.Storage": "8.4.0"
         },
         "runtime": {
           "LambdaForums.dll": {}
@@ -671,7 +672,7 @@
       "Microsoft.AspNetCore.DataProtection.AzureStorage/2.0.3": {
         "dependencies": {
           "Microsoft.AspNetCore.DataProtection": "2.0.3",
-          "WindowsAzure.Storage": "8.1.4"
+          "WindowsAzure.Storage": "8.4.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.AzureStorage.dll": {
@@ -4383,7 +4384,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "WindowsAzure.Storage/8.1.4": {
+      "WindowsAzure.Storage/8.4.0": {
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
           "NETStandard.Library": "2.0.0",
@@ -4392,8 +4393,8 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {
-            "assemblyVersion": "8.1.4.0",
-            "fileVersion": "8.1.4.0"
+            "assemblyVersion": "8.4.0.0",
+            "fileVersion": "8.4.0.0"
           }
         },
         "compile": {
@@ -6727,12 +6728,12 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
-    "WindowsAzure.Storage/8.1.4": {
+    "WindowsAzure.Storage/8.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
-      "path": "windowsazure.storage/8.1.4",
-      "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
+      "sha512": "sha512-2BzIL/b/2d86+kd74xRoNqz97VVnNv0+aaggSCR6k78nN2UVKWudMe2kxi6gmimGcJqq8BkFCavXhS8xF1INvg==",
+      "path": "windowsazure.storage/8.4.0",
+      "hashPath": "windowsazure.storage.8.4.0.nupkg.sha512"
     },
     "LambdaForums.Data/1.0.0": {
       "type": "project",

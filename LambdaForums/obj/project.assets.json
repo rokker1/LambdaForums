@@ -5014,7 +5014,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "WindowsAzure.Storage/8.1.4": {
+      "WindowsAzure.Storage/8.4.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
@@ -13743,10 +13743,10 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "WindowsAzure.Storage/8.1.4": {
-      "sha512": "W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
+    "WindowsAzure.Storage/8.4.0": {
+      "sha512": "2BzIL/b/2d86+kd74xRoNqz97VVnNv0+aaggSCR6k78nN2UVKWudMe2kxi6gmimGcJqq8BkFCavXhS8xF1INvg==",
       "type": "package",
-      "path": "windowsazure.storage/8.1.4",
+      "path": "windowsazure.storage/8.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -13763,7 +13763,7 @@
         "lib/wp8/Microsoft.WindowsAzure.Storage.pdb",
         "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
         "lib/wpa/Microsoft.WindowsAzure.Storage.pdb",
-        "windowsazure.storage.8.1.4.nupkg.sha512",
+        "windowsazure.storage.8.4.0.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
     },
@@ -13785,7 +13785,8 @@
       "Microsoft.AspNetCore.All >= 2.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.3",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
+      "WindowsAzure.Storage >= 8.4.0"
     ]
   },
   "packageFolders": {
@@ -13863,6 +13864,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.4, )"
+          },
+          "WindowsAzure.Storage": {
+            "target": "Package",
+            "version": "[8.4.0, )"
           }
         },
         "imports": [

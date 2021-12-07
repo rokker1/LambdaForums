@@ -330,10 +330,16 @@ btn-submitPost {
 /* user Profiles*/
 
 .userProfile {
-    background-color: cornsilk;
+    background-color: #fff;
     padding: 32px 0 64px 24px;
+ }
 
-
+#userProfileImage {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+    background-size:contain;
 }
 
 #userEmailLabel, #userBioLabel, #userCreatedLabel, #userRating {
