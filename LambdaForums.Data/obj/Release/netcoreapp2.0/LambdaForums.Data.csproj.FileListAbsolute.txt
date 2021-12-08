@@ -7,3 +7,4 @@ C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netco
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.csproj.CoreCompileInputs.cache
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.dll
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.pdb
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Data\obj\Release\netcoreapp2.0\LambdaForums.Data.csproj.AssemblyReference.cache

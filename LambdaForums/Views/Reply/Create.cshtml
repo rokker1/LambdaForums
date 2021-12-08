@@ -1,0 +1,32 @@
+﻿@model LambdaForums.Models.Reply.PostReplyModel
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+            Reply | @Model.PostTitle
+        </div>
+        <div class="forumLogo" style="background-image: url(@Model.ForumImageUrl)"></div>
+        <span id="headingBtn">
+            <a asp-controller="Post" asp-action="Index" asp-route-id="@Model.PostId" class="btn btn-back">
+                Back to post
+            </a>
+        </span>
+    </div>
+    <div class="row">
+        <div id="postReply">
+            <h3>
+                @Model.PostTitle
+            </h3>
+            <p>
+                @Model.PostContent
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="createReply">
+            <div class="authotBlock">
+                You're submitting this reply as
+            </div>
+        </div>
+    </div>
+</div>

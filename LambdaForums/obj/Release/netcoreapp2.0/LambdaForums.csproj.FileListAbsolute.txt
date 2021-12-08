@@ -20,3 +20,4 @@ C:\Users\alexander\source\repos\LambdaForums\LambdaForums\obj\Release\netcoreapp
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums\obj\Release\netcoreapp2.0\LambdaForums.dll
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums\obj\Release\netcoreapp2.0\LambdaForums.pdb
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums\obj\Release\netcoreapp2.0\LambdaForums.genruntimeconfig.cache
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums\bin\Release\netcoreapp2.0\storageSettings.json
