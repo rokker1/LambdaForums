@@ -47,5 +47,30 @@ namespace LambdaForums.Controllers
             };
             return View(model);
         }
+        [HttpPost]
+        public async Task<IActionResult> AddReply(PostReplyModel model)
+        {
+            var userId = _userManager.GetUserId(User);
+            var user = await _userManager.FindByIdAsync(userId);
+
+            var reply = BuildReply(model, user);
+            await _postService.AddReply(reply);
+            return RedirectToAction("Index", "Post", new { id = model.PostId });
+
+
+        }
+
+        private PostReply BuildReply(PostReplyModel model, ApplicationUser user)
+        {
+            var post = _postService.GetById(model.PostId);
+            return new PostReply
+            {
+                Post = post,
+                Content = model.ReplyContent,
+                Created = DateTime.Now,
+                User = user
+
+            };
+        }
     }
 }

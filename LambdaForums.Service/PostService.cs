@@ -23,6 +23,11 @@ namespace LambdaForums.Service
             await _context.SaveChangesAsync();
         }
 
+        public Task AddReply(PostReply reply)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task Delete(int id)
         {
             throw new NotImplementedException();

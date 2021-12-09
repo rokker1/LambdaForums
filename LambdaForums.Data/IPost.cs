@@ -18,6 +18,6 @@ namespace LambdaForums.Data
         Task Add(Post post);
         Task Delete(int id);
         Task EditPostContent(int id, string newContent);
-        
+        Task AddReply(PostReply reply);
     }
 }
