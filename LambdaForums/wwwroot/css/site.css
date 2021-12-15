@@ -8,17 +8,20 @@
     background-position: center;
 }
 
-navbar {
+.navbar {
     box-shadow: 0 5px 4px -6px #000;
-    background-color: gray !important;
+
 }
 
 .navLogo {
     background-image: url("/images/theme/logo.jpg");
-    background-size: 100%;
+    background-size: contain;
     width: 40px;
     height: 40px;
-    display: inline-block;
+    padding-right: 16px;
+    margin-right: 12px;
+    margin-top: 5px;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
@@ -176,7 +179,10 @@ searchBar {
     background-color: #212121;
     padding: 8px 0 24px 24px;
 }
-
+#replyDivider{
+    height: 2px;
+    margin-bottom: 12px;
+}
 .btn-back {
     background-color: #555;
     color: #fff !important;
@@ -264,13 +270,13 @@ btn-submitPost {
     margin-right: 20px;
 }
 
-#forumIndexTable td {
-    background-color:azure;
-    //background-color: rgba(255, 255, 255, 0.9);
+#forumIndexTable td{
+    background-color: white;
+    
 }
 
-#forumIndexTable tr:hover {
-    background-color: rgba(0, 116, 238, 1);
+#forumIndexTable td:hover {
+    background-color: #9FA8DA;
 }
 
 .forumData {
@@ -302,7 +308,10 @@ btn-submitPost {
     width: 40px;
     background-color: #ddd;
     border: 1px solid #555;
-    background-size: contain;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    background-position: center
 }
 
 .forumPostCount {
@@ -357,17 +366,56 @@ btn-submitPost {
     font-size: 1.7em;
 }
 
+/* 
+    
 
+*/
+.userProfilePic {
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+}
 
 .createPostSection {
     background-color: #fff;
     padding: 24px;
+}
+
+.replyContent{
+    display: table;
+    background-color: #fff;
+    border-bottom: solid 1px #aaa;
+    width: inherit;
+
+}
+
+#postReplyRow {
+    background-color: #3F51B5;
+    padding: 8px;
+}
+.replyContentContainer, .replyAuthorContainer {
+    display: table-cell;
+    padding: 12px;
+
+}
+
+.isAdmin{
+    display:inline-block;
+    padding:3px;
+    background-color: #FFEB3B;
+    color: #000;
+    font-family: 'Roboto Mono'
+}
+
+.smaller {
+    font-size: 0.8em;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 /* Carousel */
