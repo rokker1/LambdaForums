@@ -159,6 +159,12 @@ searchBar {
     background-size: 100%;
 }
 
+.authorBlock{
+    padding:18px;
+    border: 1px dashed #c751ef;
+    margin-bottom: 8px;
+}
+
 .postAuthorContainer {
     padding: 12px;
     color: #444;
@@ -379,6 +385,7 @@ btn-submitPost {
 .createPostSection {
     background-color: #fff;
     padding: 24px;
+
 }
 
 .replyContent{
@@ -409,6 +416,12 @@ btn-submitPost {
 
 .smaller {
     font-size: 0.8em;
+}
+
+#originalPost {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 8px;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
