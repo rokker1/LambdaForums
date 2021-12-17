@@ -107,13 +107,22 @@
     margin: 4px 0 16px 0;
 }
 
-searchBar {
-    padding: Зpx 5px 2px 12px;
+.searchBar {
+    padding: 3px 5px 2px 12px;
     margin: 8px;
     background-color: #000000;
     width: 10%;
     transition: ease .3s;
     border: none;
+}
+
+.homeSearch{
+    margin: auto;
+    background-color: rgba(155,100,155, 0.2);
+    background-blend-mode: lighten;
+    font-family: 'Roboto';
+    width: 100%;
+    place-content: normal;
 }
 
 .searchBar:focus {
@@ -276,6 +285,14 @@ btn-submitPost {
     margin-right: 20px;
 }
 
+#searchIndexTable tr {
+    background-color: white;
+}
+
+    #searchIndexTable td:hover {
+        background-color: #9FA8DA;
+    }
+
 #forumIndexTable td{
     background-color: white;
     
@@ -422,6 +439,8 @@ btn-submitPost {
     background-color: #fff;
     padding: 12px;
     margin-bottom: 8px;
+    
+
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -429,6 +448,15 @@ btn-submitPost {
     padding-left: 15px;
     padding-right: 15px;
 
+}
+
+.hasRecentPost {
+    padding: 2px;
+    background-color: #e42b2b;
+    color: #fff;
+    text-align: center;
+    border-radius: 1px;
+    width: 30px;
 }
 
 /* Carousel */
