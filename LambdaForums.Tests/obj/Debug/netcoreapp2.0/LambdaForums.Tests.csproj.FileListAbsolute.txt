@@ -28,3 +28,4 @@ C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Tests\obj\Debug\netcor
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Tests\obj\Debug\netcoreapp2.0\LambdaForums.Tests.dll
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Tests\obj\Debug\netcoreapp2.0\LambdaForums.Tests.pdb
 C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Tests\obj\Debug\netcoreapp2.0\LambdaForums.Tests.genruntimeconfig.cache
+C:\Users\alexander\source\repos\LambdaForums\LambdaForums.Tests\bin\Debug\netcoreapp2.0\appsettings.Production.json
