@@ -2,6 +2,7 @@
 using LambdaForums.Data.Models;
 using LambdaForums.Models.Post;
 using LambdaForums.Models.Reply;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace LambdaForums.Controllers
 {
+    
     public class PostController : Controller
     {
         private readonly IPost _postService;
@@ -70,6 +72,7 @@ namespace LambdaForums.Controllers
             });
 
         }
+        [Authorize]
         public IActionResult Create(int id)
         {
             var forum = _forumService.GetById(id);
@@ -84,6 +87,7 @@ namespace LambdaForums.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddPost(NewPostModel model)
         {
 

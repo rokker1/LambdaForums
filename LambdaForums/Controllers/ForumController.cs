@@ -2,6 +2,7 @@
 using LambdaForums.Data.Models;
 using LambdaForums.Models.Forum;
 using LambdaForums.Models.Post;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -79,14 +80,16 @@ namespace LambdaForums.Controllers
         {
             return RedirectToAction("Topic", new {id, searchQuery});
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             var model = new AddForumModel();
             return View(model);
         }
 
+
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddForum(AddForumModel model)
         {
             var imageUri = "/images/users/default.png";
