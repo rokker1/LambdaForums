@@ -22,7 +22,8 @@ namespace LambdaForums
             .ConfigureAppConfiguration((builderContext, config) =>
             {
                 IHostingEnvironment env = builderContext.HostingEnvironment;
-                config.AddJsonFile("storageSettings.json", optional: false, reloadOnChange: true);
+                config
+                .AddJsonFile("storageSettings.json", optional: false, reloadOnChange: true);
             })
                 .UseStartup<Startup>()
                 .Build();

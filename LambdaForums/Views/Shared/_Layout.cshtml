@@ -9,10 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - LambdaForums</title>
 
-    <environment include="Development">
+    <environment include="Development, Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
+@*
+    <environment include="Production">
+        <link rel="style" href="" />
+    </environment>*@
+
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
@@ -65,17 +70,19 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a asp-controller="Profile" 
-                                   asp-action="Detail" 
+                                <a asp-controller="Profile"
+                                   asp-action="Detail"
                                    asp-route-id="@UserManager.GetUserId(User)">
-                                @UserManager.GetUserName(User)
+                                    @UserManager.GetUserName(User)
                                 </a>
-                                </li>
-                                    <li>
-                                        <button type="submit" class="btn btn-link navbar-btn navbar-link">Sign Out</button>
-                                    </li>
+                            </li>
+                            <li>
+                                <button type="submit" class="btn btn-link navbar-btn navbar-link">
+                                    Sign Out
+                                </button>
+                            </li>
 
-</ul>
+                        </ul>
                     </form>
                 }
 
